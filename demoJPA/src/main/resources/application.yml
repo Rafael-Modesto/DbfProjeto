@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/monteseupc?useUnicode=true&characterEncoding=utf8&allowPublicKeyRetrieval=true&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+    username: root
+    password:
+#    driver-class-name: org.mariadb.jdbc.Driver
+    tomcat:
+      test-while-idle: true
+      validation-query: SELECT 1
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  jooq:
+    sql-dialect:  org.hibernate.dialect.MySQL5InnoDBDialect
+
+logging:
+  level:
+    org.springframework.security: INFO
+    ROOT: INFO
+    org.hibernate.SQL: INFO
+    com.alessiojr: DEBUG
